@@ -78,7 +78,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					2D84CD842F319F7100D41435 = {
 						CreatedOnToolsVersion = 26.2;
@@ -94,6 +94,8 @@
 			);
 			mainGroup = 2D84CD7C2F319F7100D41435;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2D84CD862F319F7100D41435 /* Products */;
 			projectDirPath = "";
@@ -159,6 +161,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = M947AUE3TT;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -184,6 +187,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -223,6 +227,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = M947AUE3TT;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -241,6 +246,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -250,9 +256,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "music-player/music-player.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = M947AUE3TT;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -282,9 +290,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "music-player/music-player.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = M947AUE3TT;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
