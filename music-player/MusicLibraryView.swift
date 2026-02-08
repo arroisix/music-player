@@ -78,19 +78,17 @@ struct MusicLibraryView: View {
 // MARK: - Top Navigation Bar
 struct LibraryTopBar: View {
     let scrollOffset: CGFloat
-    
+
     var blurOpacity: Double {
         let opacity = min(max(-scrollOffset / 100, 0), 1)
         return opacity
     }
-    
+
     var body: some View {
         ZStack {
-            // Blur Background
-            if blurOpacity > 0 {
-                MacBlurView(material: .underWindowBackground)
-                    .opacity(blurOpacity)
-            }
+            // Blur Background - always show blur, opacity changes based on scroll
+            MacBlurView(material: .hudWindow, blendingMode: .withinWindow)
+                .opacity(blurOpacity)
             
             HStack(spacing: 0) {
                 // Traffic Light Buttons (macOS style)
@@ -156,7 +154,7 @@ struct LibraryTab: View {
 // MARK: - Album Item View
 struct LibraryAlbumItem: View {
     let album: MusicAlbum
-    
+
     var body: some View {
         VStack(spacing: 12) {
             // Album Cover
@@ -169,6 +167,7 @@ struct LibraryAlbumItem: View {
                     )
                 )
                 .aspectRatio(1, contentMode: .fit)
+                .frame(maxWidth: 160, maxHeight: 160)
                 .overlay(
                     // Placeholder for album image
                     Image(systemName: "music.note")
@@ -350,17 +349,19 @@ struct MiniPlayerBar: View {
 // MARK: - macOS Blur View
 struct MacBlurView: NSViewRepresentable {
     let material: NSVisualEffectView.Material
-    
+    var blendingMode: NSVisualEffectView.BlendingMode = .behindWindow
+
     func makeNSView(context: Context) -> NSVisualEffectView {
         let visualEffectView = NSVisualEffectView()
         visualEffectView.material = material
-        visualEffectView.blendingMode = .behindWindow
+        visualEffectView.blendingMode = blendingMode
         visualEffectView.state = .active
         return visualEffectView
     }
-    
+
     func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
         nsView.material = material
+        nsView.blendingMode = blendingMode
     }
 }
 
